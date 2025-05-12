@@ -1,0 +1,42 @@
+---
+import AnimatedText from "./animated-text.astro";
+import HoverButton from "./hover-button.astro";
+import FileIcon from "../assets/icons/file.svg";
+import LinkedinIcon from "../assets/icons/linkedin.svg";
+import GitHubIcon from "../assets/icons/github.svg";
+import MailIcon from "../assets/icons/mail.svg";
+---
+
+<section class="h-screen bg-neutral-900 text-white">
+  <div class="flex flex-col mt-10 md:mt-20">
+    <AnimatedText className={"text-lg text-neutral-400"} text="Hola!" />
+    <h1 class="sr-only">
+      Hola! Soy Kevin Padilla, Desarrollador Web de Uruguay. Creo experiencias
+      web fluidas, modernas y funcionales!
+    </h1>
+    <AnimatedText
+      text="Soy Kevin Padilla, Desarrollador Web de 🧉 Uruguay . Creo experiencias web fluidas, modernas y funcionales!🚀"
+      className="text-4xl md:text-7xl"
+    />
+
+    <div class="flex gap-2 mt-10 flex-wrap">
+      <HoverButton url="mailto:kevpadilla01@gmail.com">
+        <MailIcon />
+        Ponte en contacto
+      </HoverButton>
+
+      <HoverButton url="https://flowcv.com/resume/3i92ocwa44">
+        <FileIcon />
+        Ver CV
+      </HoverButton>
+
+      <HoverButton url="https://linkedin.com/in/kevinpadi">
+        <LinkedinIcon />
+      </HoverButton>
+
+      <HoverButton url="https://github.com/kevinpadi">
+        <GitHubIcon />
+      </HoverButton>
+    </div>
+  </div>
+</section>
