@@ -17,6 +17,7 @@
     "motion": "^12.10.5",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-use-measure": "^2.1.7",
     "tailwindcss": "^4.1.6"
   }
 }
