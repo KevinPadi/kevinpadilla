@@ -15,15 +15,6 @@ const words: Array<String> = text.split(" ");
         >
           {word}
         </span>
-        {word.includes("Uruguay") && (
-          <img
-            src="/uruguay-flag.png"
-            alt="Uruguay Flag"
-            class="w-10 md:w-20 after:ml-20 after:text-red-500 after:content-['*']"
-            style="opacity: 0; filter: blur(10px);"
-            data-index={i + 1}
-          />
-        )}
       </>
     ))
   }
@@ -33,6 +24,7 @@ const words: Array<String> = text.split(" ");
   import { animate } from "motion";
 
   const elements = document.querySelectorAll("[data-index]");
+  console.log(elements);
   elements.forEach((el) => {
     const i = parseFloat(el.dataset.index);
     animate(
