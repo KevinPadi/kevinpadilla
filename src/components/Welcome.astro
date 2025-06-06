@@ -1,26 +1,44 @@
 ---
 import Hero from "./hero.astro";
+import ProjectsSection from "./projects-section.astro";
+import InfiniteSlider2 from "./infinite-slider-2";
 ---
 
-<div class="mx-auto min-h-screen w-full max-w-5xl p-2">
-	<!-- <header class="w-full flex justify-end items-center">
-		<button
-			class="bg-neutral-800 p-2 rounded-xl border border-neutral-700 text-white"
-		>
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				width="24"
-				height="24"
-				viewBox="0 0 24 24"
-				fill="none"
-				stroke="currentColor"
-				stroke-width="2"
-				stroke-linecap="round"
-				stroke-linejoin="round"
-				class="lucide lucide-moon-icon lucide-moon size-4"
-				><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
-			</svg>
-		</button>
-	</header> -->
+<div class="mx-auto min-h-screen w-full max-w-5xl p-2 sm:p-4 space-y-20">
 	<Hero />
+	<ProjectsSection />
+
+	<section class="space-y-5 flex flex-col items-center">
+		<div
+			id="section-header"
+			class="flex flex-col items-center gap-5 mb-10 md:mb-14 opacity-0"
+		>
+			<span
+				class="py-2 px-4 bg-neutral-400/20 text-white font-bold text-xs rounded-full uppercase"
+			>
+				Tecnologías
+			</span>
+			<h2
+				class="text-4xl md:text-5xl font-semibold text-neutral-100 text-balance text-center md:max-w-2xl"
+			>
+				Mi Stack de Desarrollo
+			</h2>
+		</div>
+		<InfiniteSlider2 client:only />
+	</section>
+
+	<script>
+		import { animate, easeOut, inView } from "motion";
+
+		inView("#section-header", (element) => {
+			animate(
+				element,
+				{ opacity: 1, y: [50, 0] },
+				{
+					duration: 0.9,
+					easing: easeOut,
+				},
+			);
+		});
+	</script>
 </div>
