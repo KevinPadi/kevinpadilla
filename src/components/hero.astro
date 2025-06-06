@@ -8,9 +8,7 @@ import MailIcon from "../assets/icons/mail.svg";
 import ChevronDown from "../assets/icons/chevron-down.svg";
 ---
 
-<section
-  class="h-full md:h-screen bg-neutral-900 text-white relative flex justify-center"
->
+<section class="h-full md:h-screen text-white relative flex justify-center">
   <div class="animated-el flex flex-col mt-20 md:items-center max-w-2xl">
     <h1 class="sr-only">
       ¡Hola! Soy Kevin, Desarrollador de Software Full Stack de Uruguay.
@@ -54,10 +52,12 @@ import ChevronDown from "../assets/icons/chevron-down.svg";
         <GitHubIcon />
       </HoverButton>
     </div>
-
-    <div
-      id="nav"
-      class="bg-green-500/5 text-green-300 py-2 px-4 rounded-full flex items-center gap-2 w-fit md:mx-auto mt-10"
+    <a
+      href="mailto:kevpadilla01@gmail.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      id="work-status"
+      class="bg-green-500/5 text-green-300 py-2 px-4 rounded-full flex items-center gap-2 w-fit md:mx-auto mt-10 hover:scale-110 hover:bg-green-500/10 transition-all ease-in-out"
       style="opacity: 0; filter: blur(10px);"
     >
       <span class="relative flex size-3">
@@ -68,7 +68,7 @@ import ChevronDown from "../assets/icons/chevron-down.svg";
         ></span>
       </span>
       <p>Disponible para trabajar</p>
-    </div>
+    </a>
   </div>
   <div
     id="projects"
@@ -83,7 +83,7 @@ import ChevronDown from "../assets/icons/chevron-down.svg";
 <script>
   import { animate } from "motion";
 
-  const elements = ["#nav", "#projects"];
+  const elements = ["#work-status", "#projects"];
   elements.forEach((el) => {
     animate(
       el,
