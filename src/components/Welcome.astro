@@ -2,6 +2,7 @@
 import Hero from "./hero.astro";
 import ProjectsSection from "./projects-section.astro";
 import InfiniteSlider2 from "./infinite-slider-2";
+import EducationSection from "./education-section.astro";
 ---
 
 <div class="mx-auto min-h-screen w-full max-w-5xl p-2 sm:p-4 space-y-20">
@@ -27,6 +28,8 @@ import InfiniteSlider2 from "./infinite-slider-2";
 		<InfiniteSlider2 client:only />
 	</section>
 
+	<EducationSection />
+
 	<script>
 		import { animate, easeOut, inView } from "motion";
 
@@ -35,7 +38,8 @@ import InfiniteSlider2 from "./infinite-slider-2";
 				element,
 				{ opacity: 1, y: [50, 0] },
 				{
-					duration: 0.9,
+					duration: 0.4,
+					delay: 0.3,
 					easing: easeOut,
 				},
 			);
