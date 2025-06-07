@@ -4,14 +4,21 @@ import ProjectsSection from "./projects-section.astro";
 import EducationSection from "./education-section.astro";
 import StackSection from "./stack-section.astro";
 import FooterSection from "./footer-section.astro";
+import { ProgressiveBlur } from "./progressive-blur";
 ---
 
-<div class="mx-auto min-h-screen w-full max-w-5xl p-2 sm:p-4 space-y-20">
+<div
+	class="mx-auto min-h-screen w-full max-w-5xl p-2 sm:p-4 space-y-20 relative"
+>
 	<Hero />
 	<ProjectsSection />
 	<StackSection />
 	<EducationSection />
 	<FooterSection />
+
+	<div class="fixed inset-x-0 -bottom-5 h-20 z-auto">
+		<ProgressiveBlur client:only blurIntensity={2} className="h-full m-0" />
+	</div>
 </div>
 
 <script>
