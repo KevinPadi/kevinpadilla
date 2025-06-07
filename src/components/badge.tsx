@@ -8,6 +8,9 @@ import {
   Express,
   Node,
   TypeScript,
+  Api,
+  Router,
+  Vercel
 } from './Icons';
 
 type BadgeListProps = {
@@ -23,6 +26,9 @@ const icons = [
   { name: 'express', component: <Express /> },
   { name: 'node', component: <Node /> },
   { name: 'typescript', component: <TypeScript /> },
+  { name: 'api', component: <Api /> },
+  { name: 'react router', component: <Router /> },
+  { name: 'vercel', component: <Vercel /> },
 ];
 
 export const BadgeList = ({ items }: BadgeListProps) => {

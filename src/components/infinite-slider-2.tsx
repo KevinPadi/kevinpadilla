@@ -1,4 +1,4 @@
-import { React, Git, Tailwind, GitHub, JavaScript, Express, Node, TypeScript } from "./Icons"
+import { React, Git, Tailwind, GitHub, JavaScript, Express, Node, TypeScript, Router, Vercel } from "./Icons"
 import { InfiniteSlider } from "./inifinite-slider";
 import { ProgressiveBlur } from "./progressive-blur";
 
@@ -34,6 +34,14 @@ const tech = [
   {
     icon: <Node />,
     label: 'Node.js',
+  },
+  {
+    icon: <Router />,
+    label: 'R. Router',
+  },
+  {
+    icon: <Vercel />,
+    label: 'Vercel',
   },
 ];
 
