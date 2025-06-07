@@ -70,27 +70,17 @@ import ChevronDown from "../assets/icons/chevron-down.svg";
       <p>Disponible para trabajar</p>
     </a>
   </div>
-  <div
-    id="projects"
-    class="animated-el hidden md:flex flex-col justify-center items-center text-sm text-neutral-200 text-center absolute bottom-0 left-0 right-0 p-2 font-light"
-    style="opacity: 0; filter: blur(10px);"
-  >
-    Mis proyectos destacados
-    <ChevronDown stroke-width={1} class="size-4" />
-  </div>
 </section>
 
 <script>
   import { animate } from "motion";
 
-  const elements = ["#work-status", "#projects"];
-  elements.forEach((el) => {
-    animate(
-      el,
-      { opacity: 1, filter: "blur(0px)" },
-      { duration: 0.6, delay: 0.8 },
-    );
-  });
+  const element = "#work-status";
+  animate(
+    element,
+    { opacity: 1, filter: "blur(0px)" },
+    { duration: 0.6, delay: 0.8 },
+  );
 
   animate(
     "#img",
