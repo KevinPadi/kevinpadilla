@@ -2,7 +2,7 @@
 import "./src/styles/global.css";
 ---
 
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -16,7 +16,15 @@ import "./src/styles/global.css";
 		<meta name="generator" content={Astro.generator} />
 		<title>Kevin Padilla | Desarrollador Full Stack</title>
 	</head>
-	<body class="bg-neutral-950">
+	<body class="bg-neutral-950 relative">
+		<div
+			class="absolute top-0 z-[-2] h-screen w-full bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.2),rgba(255,255,255,0))]"
+		>
+		</div>
 		<slot />
+		<div
+			class="absolute bottom-0 -z-10 h-screen w-full [background:radial-gradient(125%_125%_at_50%_10%,#0a0a0a_40%,#0e3399_100%)]"
+		>
+		</div>
 	</body>
 </html>

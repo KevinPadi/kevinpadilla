@@ -6,7 +6,7 @@ import Linkedin from "../assets/icons/linkedin.svg";
 import Github from "../assets/icons/github.svg";
 ---
 
-<footer class="flex flex-col justify-between md:min-h-screen">
+<footer class="flex flex-col justify-between md:min-h-screen relative">
   <section
     id="section-header"
     class="flex flex-col items-center gap-10 md:gap-20 opacity-0"
@@ -28,8 +28,8 @@ import Github from "../assets/icons/github.svg";
         LinkedIn
       </a>
       <button
-        class="bg-neutral-900 text-neutral-300 p-2 rounded-xl text-sm flex items-center gap-1 font-medium hover:bg-neutral-800 border border-neutral-800 transition-all ease-in-out active:scale-95"
-        onclick="navigator.clipboard.writeText('kevpadilla01@gmail.com')"
+        id="copyBtn"
+        class="bg-neutral-900 text-neutral-300 p-2 rounded-xl text-sm flex items-center gap-1 font-medium hover:bg-neutral-800 border border-neutral-800 transition-all ease-in-out active:scale-95 hover:cursor-pointer"
       >
         <Copy class="size-4" />
         kevpadilla01@gmail.com
@@ -54,7 +54,7 @@ import Github from "../assets/icons/github.svg";
 
       <button
         onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
-        class="bg-neutral-900 text-sm text-neutral-500 hover:text-neutral-400 rounded-full p-2 hover:scale-105 transition-all ease-in"
+        class="bg-neutral-950 text-sm text-neutral-500 hover:text-neutral-400 rounded-full p-2 hover:scale-105 transition-all ease-in"
       >
         <ArrowUp class="size-4 sm:size-6" />
       </button>
@@ -73,6 +73,8 @@ import Github from "../assets/icons/github.svg";
 </footer>
 
 <script>
+  import { animate } from "motion";
+
   function updateTime() {
     const time = new Date().toLocaleTimeString("es-UY", {
       timeZone: "America/Montevideo",
@@ -85,4 +87,22 @@ import Github from "../assets/icons/github.svg";
 
   updateTime();
   setInterval(updateTime, 1000);
+
+  const button = document.querySelector("#copyBtn");
+  const icon = button.querySelector("svg");
+
+  button.addEventListener("click", async () => {
+    await navigator.clipboard.writeText("kevpadilla01@gmail.com");
+
+    // animación de salida del ícono actual
+    animate(icon, { opacity: 0, scale: 0.8 }, { duration: 0.2 }).finished.then(
+      () => {
+        // cambiar a ícono de check (puedes usar tu propio SVG)
+        icon.innerHTML = `<path d="M5 13l4 4L19 7" stroke="currentColor" fill="none" stroke-width="2"/>`;
+
+        // animación de entrada
+        animate(icon, { opacity: 1, scale: 1 }, { duration: 0.2 });
+      },
+    );
+  });
 </script>
