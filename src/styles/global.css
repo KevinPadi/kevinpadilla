@@ -26,6 +26,13 @@
   --color-mantis-800: #1c5f2b;
   --color-mantis-900: #194e26;
   --color-mantis-950: #082b12;
+}
 
-
+span[data-index] {
+  display: inline-block;
+  /* evita colapsos de línea */
+  opacity: 0;
+  filter: blur(10px);
+  min-width: 1ch;
+  /* reserva espacio mínimo para la palabra */
 }

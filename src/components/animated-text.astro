@@ -24,7 +24,6 @@ const words: Array<String> = text.split(" ");
   import { animate } from "motion";
 
   const elements = document.querySelectorAll("[data-index]");
-  console.log(elements);
   elements.forEach((el) => {
     const i = parseFloat(el.dataset.index);
     animate(

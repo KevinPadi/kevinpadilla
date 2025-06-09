@@ -36,7 +36,6 @@ export const BadgeList = ({ items }: BadgeListProps) => {
     <div className="flex flex-wrap gap-2">
       {items.map((item) => {
         const icon = icons.find((i) => i.name === item.toLowerCase());
-        console.log(icon)
         if (!icon) return null;
         return (
           <div key={item} className="flex items-center justify-center gap-1 bg-neutral-900 border border-neutral-800 text-white rounded-full px-2 py-1 text-sm pointer-events-none">
