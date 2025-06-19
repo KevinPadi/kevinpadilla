@@ -1,11 +1,10 @@
 ---
-import AnimatedText from "./animated-text.astro";
 import HoverButton from "./hover-button.astro";
 import FileIcon from "../assets/icons/file.svg";
 import LinkedinIcon from "../assets/icons/linkedin.svg";
 import GitHubIcon from "../assets/icons/github.svg";
 import MailIcon from "../assets/icons/mail.svg";
-import ChevronDown from "../assets/icons/chevron-down.svg";
+import { TextEffectWithExit } from "./hero-text";
 ---
 
 <section class="h-full md:h-screen text-white relative flex justify-center">
@@ -24,15 +23,7 @@ import ChevronDown from "../assets/icons/chevron-down.svg";
         class="size-12 md:size-20 absolute bottom-0"
       />
     </div>
-    <AnimatedText
-      text="¡Hola! Soy Kevin"
-      className="text-4xl md:text-6xl text-neutral-400"
-    />
-    <AnimatedText
-      className={"text-4xl md:text-6xl"}
-      text="Desarrollador de Software Full Stack de Uruguay."
-    />
-
+    <TextEffectWithExit client:load />
     <div class="flex gap-2 mt-10 flex-wrap">
       <HoverButton name="Ponte en contacto" url="mailto:kevpadilla01@gmail.com">
         <MailIcon />
@@ -79,12 +70,12 @@ import ChevronDown from "../assets/icons/chevron-down.svg";
   animate(
     element,
     { opacity: 1, filter: "blur(0px)" },
-    { duration: 0.6, delay: 0.8 },
+    { duration: 0.3, delay: 1 },
   );
 
   animate(
     "#img",
     { opacity: 1, filter: "blur(0px)" },
-    { duration: 0.6, delay: 0 },
+    { duration: 0.3, delay: 0.3 },
   );
 </script>
