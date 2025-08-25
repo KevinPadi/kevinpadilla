@@ -1,13 +1,11 @@
 ---
-import HoverButton from "./hover-button.astro";
 import FileIcon from "../assets/icons/file.svg";
 import LinkedinIcon from "../assets/icons/linkedin.svg";
 import GitHubIcon from "../assets/icons/github.svg";
 import MailIcon from "../assets/icons/mail.svg";
-import { TextEffectWithExit } from "./hero-text";
 ---
 
-<section class="h-full md:h-screen text-white relative flex justify-center">
+<section class="h-full md:h-screen text-white relative flex justify-center border border-white/10">
   <div class="animated-el flex flex-col mt-20 md:items-center max-w-2xl">
     <h1 class="sr-only text-[16px]">
       ¡Hola! Soy Kevin, Desarrollador de Software Full Stack de Uruguay.
@@ -23,25 +21,7 @@ import { TextEffectWithExit } from "./hero-text";
         class="size-12 md:size-20 absolute bottom-0"
       />
     </div>
-    <TextEffectWithExit client:load />
     <div class="flex gap-2 mt-10 flex-wrap">
-      <HoverButton name="Ponte en contacto" url="mailto:kevpadilla01@gmail.com">
-        <MailIcon />
-        Ponte en contacto
-      </HoverButton>
-
-      <HoverButton name="Ver CV" url="https://flowcv.com/resume/ssvl2rummhi8">
-        <FileIcon />
-        Ver CV
-      </HoverButton>
-
-      <HoverButton name="LinkedIn" url="https://linkedin.com/in/kevinpadi">
-        <LinkedinIcon />
-      </HoverButton>
-
-      <HoverButton name="GitHub" url="https://github.com/kevinpadi">
-        <GitHubIcon />
-      </HoverButton>
     </div>
     <a
       href="mailto:kevpadilla01@gmail.com"
