@@ -1,7 +1,14 @@
 {
   "name": "My task board",
   "description": "Aplicación de todos full stack",
-  "technologies": ["React, TypeScript, TailwindCSS, Node, Express, MongoDB"],
+  "technologies": [
+    "React",
+    "TypeScript",
+    "TailwindCSS",
+    "Node",
+    "Express",
+    "MongoDB"
+  ],
   "repo": "https://github.com/kevinpadi/my-task-board",
   "demo": "https://vercel.com",
   "img": "/my_task_board_landing_mockup.webp"

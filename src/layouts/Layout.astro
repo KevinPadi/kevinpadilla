@@ -1,7 +1,9 @@
 ---
+import { ClientRouter } from "astro:transitions";
 import VerticalDashedLine from "../components/icons/vertical-dashed-line.astro";
 import "../styles/global.css";
 import Analytics from "@vercel/analytics/astro";
+ClientRouter
 ---
 
 <html lang="es">
@@ -42,6 +44,7 @@ import Analytics from "@vercel/analytics/astro";
 		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 		<link rel="manifest" href="/site.webmanifest" />
+		<ClientRouter />
 	</head>
 
 	<body class="bg-neutral-950 relative">

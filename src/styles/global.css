@@ -38,3 +38,7 @@ span[data-index] {
   min-width: 1ch;
   /* reserva espacio mínimo para la palabra */
 }
+
+html {
+  scrollbar-gutter: stable;
+}

@@ -15,8 +15,12 @@ const projects = await getCollection('projects')
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 py-4">
     {
       projects.map((project) => (
-        <a href="#" class="h-52 bg-neutral-100/40 rounded hover:scale-[101%] transition">
-          <img src={project.data.img} alt=`${project.id} image` class="size-full rounded">
+        <a href=`/${project.id}` class="h-52 bg-neutral-100/40 rounded hover:scale-[101%] transition">
+          <img 
+            transition:name={`img-${project.data.name}`}
+            src={project.data.img}
+            alt=`${project.id} image`
+            class="size-full rounded">
         </a>
       ))
     }
