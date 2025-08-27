@@ -7,7 +7,7 @@ import SquareArrowOutUpRight from "./icons/square-arrow-out-up-right.astro"
 const { data } = Astro.props
 const { name, demo, description, img, repo, technologies } = data
 ---
-<!-- video de midu | minuto: 48 -->
+
 <div class="mx-auto min-h-screen w-full text-neutral-200 pt-[116px] pb-10 relative overflow-x-hidden"> 
   <a href="/" class="flex items-center gap-1 text-sm text-white/50 hover:text-white/90 transition duration-300 group px-3 mb-2">
     <ChevronLeft class="size-4 group-hover:-translate-x-0.5 transition duration-300" />
@@ -18,15 +18,17 @@ const { name, demo, description, img, repo, technologies } = data
     <HorizontalDashedLine class="bottom-0" />
     <!-- header -->
     <div class="flex items-center justify-between">
-      <h1 class="text-lg font-medium">
+      <h1 class="text-base sm:text-lg font-medium">
         {name}
       </h1>
       <div class="flex items-center gap-3">
         <a href={repo} target="_blank" rel="noopener noreferrer" class="hover:opacity-60 transition duration-300">
           <GithubIcon class="size-6" />
         </a>
-        <a href={demo} target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 bg-neutral-200 text-neutral-950 py-1 px-2 rounded-xs text-sm font-medium hover:opacity-60 transition duration-300">
-          Demo
+        <a href={demo} target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 bg-neutral-200 text-neutral-950 py-2 sm:py-1 px-2 rounded-xs text-sm font-medium hover:opacity-60 transition duration-300 ">
+          <span class="hidden sm:block">
+            Demo
+          </span>
           <SquareArrowOutUpRight class="size-4" />
         </a>
       </div>
@@ -43,14 +45,14 @@ const { name, demo, description, img, repo, technologies } = data
         <div class="flex gap-2 items-center flex-wrap">
           {
             technologies.map((tech: string) => (
-              <span class="border border-dashed rounded px-2 border-white/15 text-sm text-neutral-400 pointer-events-none">
+              <span class="border border-dashed rounded px-2 border-white/15 text-xs text-neutral-400 pointer-events-none">
                 {tech}
               </span>
             ))
           }
         </div>
         <div>
-          <p class="text-sm text-neutral-300">
+          <p class="text-xs sm:text-sm text-neutral-300">
             {description}
           </p>
         </div>
