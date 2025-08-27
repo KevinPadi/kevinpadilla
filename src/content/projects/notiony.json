@@ -1,0 +1,8 @@
+{
+  "name": "Notiony",
+  "description": "Clon de notion full stack",
+  "technologies": ["React, TypeScript, TailwindCSS, Node, Express, MongoDB"],
+  "repo": "https://github.com/kevinpadi/notion-clone",
+  "demo": "https://vercel.com",
+  "img": "/notiony_landing_mockup.webp"
+}

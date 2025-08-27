@@ -1,0 +1,24 @@
+---
+import { getCollection } from "astro:content";
+import HorizontalDashedLine from "./icons/horizontal-dashed-line.astro";
+
+const projects = await getCollection('projects')
+---
+
+<section class="text-neutral-200 px-4">
+  <div class="py-4 relative">
+    <h2>
+      Projectos
+    </h2>
+    <HorizontalDashedLine class="bottom-0" />
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 py-4">
+    {
+      projects.map((project) => (
+        <a href="#" class="h-52 bg-neutral-100/40 rounded hover:scale-[101%] transition">
+          <img src={project.data.img} alt=`${project.id} image` class="size-full rounded">
+        </a>
+      ))
+    }
+  </div>
+</section>
