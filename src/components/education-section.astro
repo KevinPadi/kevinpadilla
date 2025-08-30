@@ -1,0 +1,56 @@
+---
+import HorizontalDashedLine from "./icons/horizontal-dashed-line.astro";
+import ArrowUpRight from "./icons/arrow-up-right.astro";
+import StackSection from "./stack-section.astro";
+
+const DATA = [
+  {
+    title: "Certificación en Desarrollo Full Stack",
+    academy: "4Geeks Academy",
+    url: "https://certificate.4geeks.com/1c213af13c6646110e28cbd03c135c1f5f49dab6"
+  },
+  {
+    title: "Certificación en React",
+    academy: "HackerRank",
+    url: "https://www.hackerrank.com/certificates/c229b0f38edc"
+  },
+  {
+    title: "Certificación en Inglés",
+    academy: "4Geeks Academy",
+    url: "https://cert.efset.org/oqiE9c"
+  },
+]
+---
+
+<section class="text-neutral-200">
+  <div class="p-4 relative">
+    <span class="flex items-center gap-2" >
+      <div class="size-1.5 bg-white" />
+      <h2>
+        Educación
+      </h2>
+    </span>
+    <HorizontalDashedLine class="top-0" />
+    <HorizontalDashedLine class="bottom-0" />
+  </div>
+  <div class="flex flex-col">
+    {
+      DATA.map((i) => (
+        <div class="flex items-center justify-between gap-4 relative group hover:bg-white/5 transition duration-200 p-4">
+          <a href={i.url} target="_blank" rel="noopener noreferrer" class="inset-0 absolute"></a>
+          <div class="flex items-center gap-4">
+            <div>
+              <h3 class="text-sm">
+                {i.title}
+              </h3>
+              <p class="text-sm text-neutral-400">{i.academy}</p>
+            </div>
+          </div>
+          <div class="md:opacity-10 md:group-hover:opacity-50 md:rotate-45 md:group-hover:rotate-0 transition duration-300">
+            <ArrowUpRight />
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>
