@@ -1,31 +1,34 @@
 @import "tailwindcss";
+@plugin '@tailwindcss/typography';
 
 @theme {
-  --font-sans: 'Inter', 'sans-serif';
+  --font-sans: "Geist", "sans-serif";
+  --animate-flicker: flicker 2.5s linear infinite both;
+}
 
-  --color-blue-50: #edf9ff;
-  --color-blue-100: #d6f0ff;
-  --color-blue-200: #b7e6ff;
-  --color-blue-300: #85d8ff;
-  --color-blue-400: #4cc0ff;
-  --color-blue-500: #23a0ff;
-  --color-blue-600: #0b81ff;
-  --color-blue-700: #056dfa;
-  --color-blue-800: #0b54c2;
-  --color-blue-900: #104998;
-  --color-blue-950: #0f2e5c;
-
-  --color-mantis-50: #f1fcf2;
-  --color-mantis-100: #defae4;
-  --color-mantis-200: #bff3c9;
-  --color-mantis-300: #8ee7a0;
-  --color-mantis-400: #55d370;
-  --color-mantis-500: #30c04f;
-  --color-mantis-600: #21983b;
-  --color-mantis-700: #1d7831;
-  --color-mantis-800: #1c5f2b;
-  --color-mantis-900: #194e26;
-  --color-mantis-950: #082b12;
+@keyframes flicker {
+  0%,
+  32.98%,
+  34.02%,
+  34.98%,
+  35.92%,
+  38.98%,
+  39.82%,
+  83.98%,
+  84.92%,
+  to {
+    opacity: 1;
+  }
+  33%,
+  34%,
+  35%,
+  35.9%,
+  39%,
+  39.8%,
+  84%,
+  84.9% {
+    opacity: 0;
+  }
 }
 
 span[data-index] {
@@ -35,4 +38,9 @@ span[data-index] {
   filter: blur(10px);
   min-width: 1ch;
   /* reserva espacio mínimo para la palabra */
+}
+
+html {
+  scrollbar-gutter: stable;
+  scroll-behavior: smooth;
 }

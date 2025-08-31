@@ -1,0 +1,42 @@
+---
+
+---
+
+<div class="relative flex flex-col items-center justify-center size-12 border border-white/15 rounded-lg">
+  <div class="flex justify-between w-full px-2">
+    <div class="flex items-center justify-center w-1 h-5">
+      <div id="eye-left" class="bg-white rounded-full transition-all duration-300 ease-in-out w-1 h-5"></div>
+    </div>
+    <div class="flex items-center justify-center w-1 h-5">
+      <div id="eye-right" class="bg-white rounded-full transition-all duration-300 ease-in-out w-1 h-5"></div>
+    </div>
+  </div>
+  <div class="absolute bottom-1 bg-white rounded-full w-4 h-1"></div>
+</div>
+
+<script>
+  const positions = [-4, 0, 4];
+  let index = 0;
+
+  const eyeLeft = document.getElementById("eye-left");
+  const eyeRight = document.getElementById("eye-right");
+
+  if (eyeLeft && eyeRight) {
+    setInterval(() => {
+      index = (index + 1) % positions.length;
+      const offset = positions[index];
+      eyeLeft.style.transform = `translateX(${offset}px)`;
+      eyeRight.style.transform = `translateX(${offset}px)`;
+    }, 1200);
+
+    setInterval(() => {
+      eyeLeft.style.height = "4px";
+      eyeRight.style.height = "4px";
+      setTimeout(() => {
+        eyeLeft.style.height = "20px";
+        eyeRight.style.height = "20px";
+      }, 200);
+    }, 4000);
+  }
+
+</script>

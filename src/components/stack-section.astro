@@ -1,22 +1,50 @@
 ---
-import InfiniteSlider2 from "./infinite-slider-2";
+import HorizontalDashedLine from "./icons/horizontal-dashed-line.astro";
+
+import React from "./icons/react.astro";
+import Node from "./icons/nodejs.astro";
+import Typescript from "./icons/typescript.astro";
+import Javascript from "./icons/javascript.astro";
+import Expressjs from "./icons/expressjs.astro";
+import Git from "./icons/git.astro";
+import Tailwindcss from "./icons/tailwindcss.astro";
+import Html from "./icons/html.astro";
+import Css from "./icons/css.astro";
+import Mongodb from "./icons/mongodb.astro";
+import GithubIcon from "./icons/github-icon.astro";
+
+const skills = [
+  { name: "HTML", icon: Html},
+  { name: "CSS", icon: Css},
+  { name: "Tailwind CSS", icon: Tailwindcss},
+  { name: "React", icon: React },
+  { name: "TypeScript", icon: Typescript},
+  { name: "JavaScript", icon: Javascript},
+  { name: "Node.js", icon: Node},
+  { name: "Express.js", icon: Expressjs},
+  { name: "MongoDB", icon: Mongodb},
+  { name: "Git", icon: Git },
+  { name: "GitHub", icon: GithubIcon },
+];
 ---
 
-<section class="space-y-5 flex flex-col items-center">
-  <div
-    id="section-header"
-    class="flex flex-col items-center gap-5 mb-10 md:mb-14 opacity-0"
-  >
-    <span
-      class="py-2 px-4 bg-neutral-400/20 text-white font-bold text-xs rounded-full uppercase"
-    >
-      Tecnologías
+<section class="text-neutral-200 px-4">
+  <div class="py-4 relative">
+    <span class="flex items-center gap-2" >
+      <div class="size-1.5 bg-white" />
+      <h2>
+        Stack
+      </h2>
     </span>
-    <h2
-      class="text-4xl md:text-5xl font-semibold text-neutral-100 text-balance text-center md:max-w-2xl"
-    >
-      Mi Stack de Desarrollo
-    </h2>
+    <HorizontalDashedLine class="top-0" />
+    <HorizontalDashedLine class="bottom-0" />
   </div>
-  <InfiniteSlider2 client:only />
+  <div class="flex flex-wrap gap-2 py-4">
+    {skills.map(({ name, icon: Icon }) => (
+      <span class="inline-flex items-center gap-1 rounded p-1.5 text-sm text-white border border-white/15 border-dashed">
+        <Icon class="w-4 h-4" />
+        {name}
+      </span>
+    ))}
+  </div>
 </section>

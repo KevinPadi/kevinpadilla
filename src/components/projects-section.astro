@@ -1,170 +1,31 @@
 ---
-import { BadgeList } from "./badge";
-import GitHubIcon from "../assets/icons/github.svg";
-import ArrowUpRight from "../assets/icons/arrow-up-right.svg";
+import { getCollection } from "astro:content";
+import HorizontalDashedLine from "./icons/horizontal-dashed-line.astro";
 
-const projects = [
-  {
-    title: "Notiony",
-    year: "2025",
-    type: "Desarrollo Full Stack",
-    description:
-      "Editor tipo Notion con Tiptap: soporta texto enriquecido (títulos, listas, tareas, código, etc.), páginas con portada de Unsplash y emoji, menú de comandos, diseño limpio y 100% responsive.",
-    image: ["/notiony_landing_mockup.webp", "/notiony_phones_mockups.webp"],
-    logo: "/notiony-logo.webp",
-    technologies: [
-      "React",
-      "TypeScript",
-      "Node",
-      "Express",
-      "Git",
-      "GitHub",
-      "Tailwind",
-      "React Router",
-      "Vercel",
-      "Api",
-    ],
-    buttonColors: {
-      live: "bg-mantis-700 hover:bg-mantis-600",
-      github: "bg-mantis-600/15 hover:text-mantis-300 text-mantis-400",
-    },
-    links: {
-      live: "https://notiony-gray.vercel.app",
-      github: "https://github.com/kevinpadi/notion-clone",
-    },
-  },
-  {
-    title: "My Task Board",
-    year: "2023",
-    type: "Desarrollo Full Stack",
-    description:
-      "Aplicación web de gestión de tareas: permite crear, editar, eliminar y listar tareas usando métodos HTTP (GET, POST, PUT, DELETE). Un proyecto simple pero completo para demostrar habilidades en desarrollo fullstack.",
-    image: [
-      "/my_task_board_landing_mockup.webp",
-      "/my_task_board_phones_mockups.webp",
-      "/my_task_board_desktop_mockups.webp",
-    ],
-    logo: "/my_task_board_logo.svg",
-    technologies: [
-      "React",
-      "TypeScript",
-      "Node",
-      "Express",
-      "Git",
-      "GitHub",
-      "Tailwind",
-      "React Router",
-      "Vercel",
-      "Api",
-    ],
-    buttonColors: {
-      live: "bg-yellow-700 hover:bg-yellow-600",
-      github: "bg-yellow-700/15 hover:text-yellow-300 text-yellow-400",
-    },
-    links: {
-      live: "https://my-task-board-ten.vercel.app",
-      github: "https://github.com/kevinpadi/my-task-board",
-    },
-  },
-  {
-    title: "Space Website",
-    year: "2023",
-    type: "Desarrollo Frontend",
-    description:
-      "Sitio web de turismo espacial con múltiples páginas y navegación usando React Router. Incluye navegación por tabs y contenido dinámico desde un archivo local. Totalmente responsive, con diseño fiel al prototipo original",
-    image: [
-      "/space_landing_mockup.webp",
-      "/space_desktop_mockups.webp",
-      "/space_phones_mockups.webp",
-    ],
-    logo: "/space_logo.svg",
-    technologies: ["React", "Tailwind", "Git", "GitHub", "React Router"],
-    buttonColors: {
-      live: "bg-blue-700 hover:bg-blue-600",
-      github: "bg-blue-700/15 hover:text-blue-300 text-blue-400",
-    },
-    links: {
-      live: "https://kevinpadi.github.io/space-tourism-website/",
-      github: "https://github.com/kevinpadi/space-tourism-website",
-    },
-  },
-];
+const projects = await getCollection('projects')
 ---
 
-<section
-  class="flex flex-col gap-10 items-center max-w-2xl lg:max-w-none mx-auto"
->
-  <div
-    id="section-header"
-    class="flex flex-col items-center gap-5 mb-10 md:mb-14 opacity-0"
-  >
-    <span
-      class="py-2 px-4 bg-neutral-400/20 text-white font-bold text-xs rounded-full uppercase"
-    >
-      Portfolio
+<section class="text-neutral-200 px-4">
+  <div class="py-4 relative">
+    <span class="flex items-center gap-2" >
+      <div class="size-1.5 bg-white" />
+      <h2>
+        Proyectos
+      </h2>
     </span>
-    <h2
-      class="text-4xl md:text-5xl font-semibold text-neutral-100 text-balance text-center md:max-w-2xl"
-    >
-      Mis proyectos destacados
-    </h2>
+    <HorizontalDashedLine class="bottom-0" />
   </div>
-  {
-    projects.map((project) => (
-      <article class="flex flex-col lg:flex-row gap-10 mb-10">
-        <div class="lg:sticky lg:top-10 h-fit md:h-[400px] lg:flex-1 flex flex-col justify-between space-y-10">
-          <div class="flex flex-col gap-4 md:gap-10">
-            <img
-              class="size-10 rounded-lg"
-              src={project.logo}
-              alt="Logo del Proyecto"
-            />
-            <div class="flex flex-col gap-4">
-              <h3 class="text-3xl text-neutral-200 font-medium">
-                {project.title}
-              </h3>
-              <p class="text-base text-neutral-200 text-balance">
-                {project.description}
-              </p>
-              <BadgeList items={project.technologies} client:only />
-            </div>
-          </div>
-          <div class="flex gap-4">
-            <a
-              class={`${project.buttonColors.live} text-white shadow-md rounded-xl px-4 py-3 hover:scale-105 transition-all ease-in-out flex items-center justify-center`}
-              href={project.links.live}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span>Live demo</span>
-              <ArrowUpRight class="size-5 stroke-1.5" />
-            </a>
-            <a
-              class={`${project.buttonColors.github} shadow-md rounded-xl px-4 py-3 font-medium  flex gap-1 items-center justify-center hover:scale-105 transition-all ease-in-out`}
-              href={project.links.github}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <GitHubIcon class="size-5" />
-              <span>GitHub</span>
-            </a>
-          </div>
-        </div>
-        <div class="relative h-fit lg:flex-1">
-          <span class="bg-neutral-200 text-black py-2 px-4 rounded-full absolute top-0">
-            {project.type}
-          </span>
-          <div class="sticky top-10 flex flex-col gap-10 mt-20">
-            {project.image.map((img) => (
-              <img
-                src={img}
-                alt="imagen"
-                class="w-full rounded-xl shadow-xl shadow-black/20"
-              />
-            ))}
-          </div>
-        </div>
-      </article>
-    ))
-  }
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 py-4">
+    {
+      projects.map((project) => (
+        <a href=`/${project.id}` class="h-52 border border-white/10 rounded-lg hover:scale-[101%] transition overflow-hidden">
+          <img 
+            transition:name={`img-${project.data.name}`}
+            src={project.data.img[0]}
+            alt=`${project.id} image`
+            class="size-full rounded object-cover">
+        </a>
+      ))
+    }
+  </div>
 </section>

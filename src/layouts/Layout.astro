@@ -1,6 +1,9 @@
 ---
+import { ClientRouter } from "astro:transitions";
+import VerticalDashedLine from "../components/icons/vertical-dashed-line.astro";
 import "../styles/global.css";
 import Analytics from "@vercel/analytics/astro";
+ClientRouter
 ---
 
 <html lang="es">
@@ -33,28 +36,24 @@ import Analytics from "@vercel/analytics/astro";
 		<!-- Fuentes -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-			rel="stylesheet"
-		/>
+		<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
 
 		<!-- Iconos -->
 		<link rel="icon" href="/favicon.ico" sizes="any" />
 		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 		<link rel="manifest" href="/site.webmanifest" />
+		<ClientRouter />
 	</head>
 
 	<body class="bg-neutral-950 relative">
+		<div class="fixed top-0 right-0 w-full h-20 bg-gradient-to-b from-neutral-950 to-transparent z-50 pointer-events-none" />
 		<Analytics />
-		<div
-			class="absolute top-0 z-[-2] h-screen w-full bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.2),rgba(255,255,255,0))]"
-		>
-		</div>
-		<slot />
-		<div
-			class="absolute bottom-0 -z-10 h-screen w-full [background:radial-gradient(125%_125%_at_50%_10%,#0a0a0a_40%,#0e3399_100%)]"
-		>
+		<div class="mx-auto max-w-2xl relative" >
+			<VerticalDashedLine class="right-0" />
+			<VerticalDashedLine />
+			<slot />
 		</div>
 	</body>
 </html>

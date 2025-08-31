@@ -1,81 +1,79 @@
 ---
-import HoverButton from "./hover-button.astro";
 import FileIcon from "../assets/icons/file.svg";
 import LinkedinIcon from "../assets/icons/linkedin.svg";
 import GitHubIcon from "../assets/icons/github.svg";
 import MailIcon from "../assets/icons/mail.svg";
-import { TextEffectWithExit } from "./hero-text";
+import SocialButton from "./social-button.astro";
+import HorizontalDashedLine from "./icons/horizontal-dashed-line.astro"
+import AnimatedFace from "./animated-face.astro";
+import CTAButton from "./cta-button.astro"
 ---
 
-<section class="h-full md:h-screen text-white relative flex justify-center">
-  <div class="animated-el flex flex-col mt-20 md:items-center max-w-2xl">
-    <h1 class="sr-only text-[16px]">
-      ¡Hola! Soy Kevin, Desarrollador de Software Full Stack de Uruguay.
-    </h1>
-    <div
-      id="img"
-      class="size-12 md:w-20 md:h-12 rounded-full bg-blue-300 relative flex items-center overflow-hidden md:overflow-visible mb-5"
-      style="opacity: 0; filter: blur(10px);"
-    >
-      <img
-        src="/memoji.webp"
-        alt="Memoji"
-        class="size-12 md:size-20 absolute bottom-0"
-      />
-    </div>
-    <TextEffectWithExit client:load />
-    <div class="flex gap-2 mt-10 flex-wrap">
-      <HoverButton name="Ponte en contacto" url="mailto:kevpadilla01@gmail.com">
-        <MailIcon />
-        Ponte en contacto
-      </HoverButton>
-
-      <HoverButton name="Ver CV" url="https://flowcv.com/resume/ssvl2rummhi8">
-        <FileIcon />
-        Ver CV
-      </HoverButton>
-
-      <HoverButton name="LinkedIn" url="https://linkedin.com/in/kevinpadi">
-        <LinkedinIcon />
-      </HoverButton>
-
-      <HoverButton name="GitHub" url="https://github.com/kevinpadi">
-        <GitHubIcon />
-      </HoverButton>
-    </div>
-    <a
-      href="mailto:kevpadilla01@gmail.com"
-      target="_blank"
-      rel="noopener noreferrer"
-      id="work-status"
-      class="bg-green-500/5 text-green-300 py-2 px-4 rounded-full flex items-center gap-2 w-fit md:mx-auto mt-10 hover:scale-110 hover:bg-green-500/10 transition-all ease-in-out"
-      style="opacity: 0; filter: blur(10px);"
-    >
-      <span class="relative flex size-3">
-        <span
-          class="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"
-        ></span>
-        <span class="relative inline-flex size-3 rounded-full bg-green-500"
-        ></span>
+<section class="text-white relative flex flex-col gap-6 items-center justify-between p-4">
+  <HorizontalDashedLine class="top-0" />
+  <HorizontalDashedLine class="bottom-0" />
+  <div class="w-full flex flex-col gap-10">
+    <div class="flex items-start justify-between">
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <!-- face -->
+        <AnimatedFace />
+        <div class="flex flex-col items-start justify-center -space-y-1">
+          <h1 class="text-neutral-200 text-lg">
+            Kevin Padilla
+          </h1>
+          <p class="text-neutral-400 text-sm">Desarrollador Full Stack</p>
+        </div>
+      </div>
+      <span class="text-sm text-neutral-400 flex gap-2">
+        Hora local: <div id="reloj"></div>
       </span>
-      <p>Disponible para trabajar</p>
-    </a>
+    </div>
+    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-2 justify-between">
+      <CTAButton />
+
+      <div class="flex items-center gap-2">
+        <SocialButton url="mailto:kevpadilla01@gmail.com">
+        <MailIcon class="size-5" />
+        </SocialButton>
+        <SocialButton url="https://flowcv.com/resume/ssvl2rummhi8">
+          <FileIcon class="size-5" />
+        </SocialButton>
+        <SocialButton url="https://linkedin.com/in/kevinpadi">
+          <LinkedinIcon class="size-5" />
+        </SocialButton>
+        <SocialButton url="https://github.com/kevinpadi">
+          <GitHubIcon class="size-5" />
+        </SocialButton>
+      </div>
+    </div>
+  </div>
+  <div class="relative pt-4">
+    <HorizontalDashedLine class="top-0" />
+    <p class="text-neutral-200">
+      soy Kevin, desarrollador Full Stack de Uruguay. Me especializo en el desarrollo frontend con React.js, y tengo una gran pasión por crear aplicaciones web dinámicas y responsivas. Además, cuento con experiencia en el desarrollo backend utilizando Node.js y Python.
+    </p>
   </div>
 </section>
 
 <script>
-  import { animate } from "motion";
+  
+  // hora local
+    function updateWatch() {
+      if (!document) return
+    const relojElem = document.getElementById("reloj");
+    if (!relojElem) return;
+    const newTime = relojElem.textContent;
+    const actualDate = new Date();
+    const time = actualDate.toLocaleTimeString("es-UY", {
+      timeZone: "America/Montevideo",
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false
+    });
+    relojElem.textContent = time;
+  }
 
-  const element = "#work-status";
-  animate(
-    element,
-    { opacity: 1, filter: "blur(0px)" },
-    { duration: 0.3, delay: 1 },
-  );
-
-  animate(
-    "#img",
-    { opacity: 1, filter: "blur(0px)" },
-    { duration: 0.3, delay: 0.3 },
-  );
+  updateWatch(); // muestra inmediatamente
+  setInterval(updateWatch, 60000); // actualiza cada minuto
 </script>
+
