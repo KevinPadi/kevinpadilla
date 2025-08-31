@@ -2,7 +2,7 @@
 @plugin '@tailwindcss/typography';
 
 @theme {
-  --font-sans: "Geist Mono", "monospace";
+  --font-sans: "Geist", "sans-serif";
   --animate-flicker: flicker 2.5s linear infinite both;
 }
 
