@@ -1,14 +1,16 @@
 ---
+import ArrowUp from "./icons/arrow-up.astro"
 import ChevronLeft from "./icons/chevron-left.astro"
 import GithubIcon from "./icons/github-icon.astro"
 import HorizontalDashedLine from "./icons/horizontal-dashed-line.astro"
-import SquareArrowOutUpRight from "./icons/square-arrow-out-up-right.astro"
+import Globe from "./icons/globe.astro"
 
 const { data } = Astro.props
 const { name, demo, description, img, repo, technologies } = data
 ---
 
-<div class="mx-auto min-h-screen w-full text-neutral-200 pt-[116px] pb-10 relative overflow-x-hidden"> 
+<div class="mx-auto min-h-screen w-full text-neutral-200 pt-[116px] pb-36 relative overflow-x-hidden">
+  <div class="absolute top-0 sr-only" id="top" />
   <a href="/" class="flex items-center gap-1 text-sm text-white/50 hover:text-white/90 transition duration-300 group px-3 mb-2">
     <ChevronLeft class="size-4 group-hover:-translate-x-0.5 transition duration-300" />
     Kevin Padilla
@@ -18,30 +20,37 @@ const { name, demo, description, img, repo, technologies } = data
     <HorizontalDashedLine class="bottom-0" />
     <!-- header -->
     <div class="flex items-center justify-between">
-      <h1 class="text-base sm:text-lg font-medium">
-        {name}
-      </h1>
+      <span class="flex items-center gap-2" >
+        <div class="size-1.5 bg-white" />
+        <h1>
+          {name}
+        </h1>
+      </span>
       <div class="flex items-center gap-3">
-        <a href={repo} target="_blank" rel="noopener noreferrer" class="hover:opacity-60 transition duration-300">
-          <GithubIcon class="size-6" />
+        <a href={repo} target="_blank" rel="noopener noreferrer" class="transition duration-300 hover:bg-white/5 p-2 rounded-full">
+          <GithubIcon class="size-5" />
         </a>
-        <a href={demo} target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 bg-neutral-200 text-neutral-950 py-2 sm:py-1 px-2 rounded-xs text-sm font-medium hover:opacity-60 transition duration-300 ">
-          <span class="hidden sm:block">
-            Demo
+        <a href={demo} target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 bg-neutral-200 text-neutral-950 p-2 rounded-full text-sm font-medium hover:opacity-70 transition duration-300 ">
+          <span>
+            Visitar
           </span>
-          <SquareArrowOutUpRight class="size-4" />
+          <Globe class="size-5 stroke-[1.5]" />
         </a>
       </div>
     </div>
     <!-- project details -->
      <div class="flex flex-col gap-8">
-        <a href={demo} target="_blank" rel="noopener noreferrer">
-          <img             
-            transition:name={`img-${name}`}
-            src={img}
-            alt={`${name} image`}
-            class="rounded-md border border-white/15 mx-auto">
-        </a>
+      <div class="grid grid-cols-2 gap-2 items-start auto-rows-auto relative">
+        <a href={demo} target="_blank" rel="noopener noreferrer" class="inset-0 size-full absolute  z-10"></a>
+        <img transition:name={`img-${name}`} src={img[0]} alt={`${name} image`}
+            class="col-span-2 rounded-xl border border-white/15 w-full h-auto" />
+
+        <img src={img[1]} alt={`${name} image`}
+            class="rounded-xl border border-white/15 w-full h-auto" />
+
+        <img src={img[2]} alt={`${name} image`}
+            class="rounded-xl border border-white/15 w-full h-auto" />
+      </div>
         <div class="flex gap-2 items-center flex-wrap">
           {
             technologies.map((tech: string) => (
@@ -51,11 +60,18 @@ const { name, demo, description, img, repo, technologies } = data
             ))
           }
         </div>
-        <div>
-          <p class="text-xs sm:text-sm text-neutral-300">
-            {description}
-          </p>
+        <div class="prose">
+          {
+            description.map((p: string) => (
+              <p class="text-xs sm:text-sm text-neutral-300">
+                {p}
+              </p>
+            ))
+          }
         </div>
      </div>
   </div>
+  <a href=`#top` class="rounded-full bg-white/10 opacity-50 hover:opacity-100 transition absolute p-2 mt-3 mr-3 right-0">
+    <ArrowUp class="size-5 text-neutral-300" />
+  </a>
 </div>

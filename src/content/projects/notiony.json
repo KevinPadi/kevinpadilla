@@ -1,6 +1,9 @@
 {
   "name": "Notiony",
-  "description": "Clon de notion full stack",
+  "description": [
+    "Aplicación web para crear y organizar notas de manera intuitiva, con un editor enriquecido que permite usar títulos, listas, citas, tareas y más. Cada página puede personalizarse con una portada y un emoji, lo que la hace más visual y única.",
+    " El diseño es limpio, moderno y adaptable a cualquier dispositivo, ofreciendo una experiencia similar a Notion con un menú de comandos rápido y fácil de usar."
+  ],
   "technologies": [
     "React",
     "TypeScript",
@@ -10,6 +13,6 @@
     "MongoDB"
   ],
   "repo": "https://github.com/kevinpadi/notion-clone",
-  "demo": "https://vercel.com",
-  "img": "/notiony_landing_mockup.webp"
+  "demo": "https://notiony-gray.vercel.app/",
+  "img": ["/notiony.webp", "/notiony_second.webp", "/notiony_third.webp"]
 }

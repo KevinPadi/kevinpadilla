@@ -1,6 +1,9 @@
 {
   "name": "My task board",
-  "description": "Aplicación de todos full stack",
+  "description": [
+    "Es una aplicación web para gestionar tareas, donde los usuarios pueden registrarse, iniciar sesión y organizar sus pendientes de forma sencilla.",
+    "Cada tarea puede personalizarse con nombre, ícono y descripción, y su estado puede actualizarse entre “en progreso”, “completada” o “descartada\""
+  ],
   "technologies": [
     "React",
     "TypeScript",
@@ -10,6 +13,10 @@
     "MongoDB"
   ],
   "repo": "https://github.com/kevinpadi/my-task-board",
-  "demo": "https://vercel.com",
-  "img": "/my_task_board_landing_mockup.webp"
+  "demo": "https://my-task-board-ten.vercel.app/",
+  "img": [
+    "/my-task-board.webp",
+    "/my-task-board-second.webp",
+    "my-task-board-third.webp"
+  ]
 }

@@ -1,0 +1,14 @@
+{
+  "name": "Toolbar",
+  "description": [
+    "Clon de la landing page de Toolbar (usetoolbar.use), es totalmente responsive y cuenta con todas las animaciones y funciones de la landing original"
+  ],
+  "technologies": ["React", "TypeScript", "TailwindCSS", "Motion", "Zustand"],
+  "repo": "https://github.com/KevinPadi/usetool.bar-clone",
+  "demo": "https://usetool-bar-clone.vercel.app/",
+  "img": [
+    "/usetool-bar-clone.webp",
+    "/toolbar_second.webp",
+    "/toolbar_third.webp"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "Layers",
+  "description": [
+    "Landing page para un SaaS con animaciones e interacciones como drag and drop, animaciones por scroll y más"
+  ],
+  "technologies": ["Next.js", "TypeScript", "TailwindCSS", "Motion"],
+  "repo": "https://github.com/KevinPadi/SaaS-Landing-Page",
+  "demo": "https://saa-s-landing-page-delta.vercel.app/",
+  "img": ["/layers.webp", "/layers-second.webp", "layers-third.webp"]
+}

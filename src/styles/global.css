@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin '@tailwindcss/typography';
 
 @theme {
   --font-sans: "Geist Mono", "monospace";
@@ -41,4 +42,5 @@ span[data-index] {
 
 html {
   scrollbar-gutter: stable;
+  scroll-behavior: smooth;
 }
