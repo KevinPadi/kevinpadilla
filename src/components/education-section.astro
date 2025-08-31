@@ -1,7 +1,6 @@
 ---
 import HorizontalDashedLine from "./icons/horizontal-dashed-line.astro";
 import ArrowUpRight from "./icons/arrow-up-right.astro";
-import StackSection from "./stack-section.astro";
 
 const DATA = [
   {
@@ -16,13 +15,13 @@ const DATA = [
   },
   {
     title: "Certificación en Inglés",
-    academy: "4Geeks Academy",
+    academy: "EF SET",
     url: "https://cert.efset.org/oqiE9c"
   },
 ]
 ---
 
-<section class="text-neutral-200">
+<section class="text-neutral-200 relative">
   <div class="p-4 relative">
     <span class="flex items-center gap-2" >
       <div class="size-1.5 bg-white" />
@@ -53,4 +52,5 @@ const DATA = [
       ))
     }
   </div>
+  <HorizontalDashedLine class="bottom-0" />
 </section>

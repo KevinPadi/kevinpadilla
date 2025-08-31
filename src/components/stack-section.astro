@@ -1,7 +1,6 @@
 ---
 import HorizontalDashedLine from "./icons/horizontal-dashed-line.astro";
 
-// importa los iconos
 import React from "./icons/react.astro";
 import Node from "./icons/nodejs.astro";
 import Typescript from "./icons/typescript.astro";
@@ -12,7 +11,6 @@ import Tailwindcss from "./icons/tailwindcss.astro";
 import Html from "./icons/html.astro";
 import Css from "./icons/css.astro";
 import Mongodb from "./icons/mongodb.astro";
-import Nodejs from "./icons/nodejs.astro";
 import GithubIcon from "./icons/github-icon.astro";
 
 const skills = [
@@ -43,7 +41,7 @@ const skills = [
   </div>
   <div class="flex flex-wrap gap-2 py-4">
     {skills.map(({ name, icon: Icon }) => (
-      <span class="inline-flex items-center gap-1 rounded px-3 py-1 text-sm text-white border border-white/15 border-dashed">
+      <span class="inline-flex items-center gap-1 rounded p-1.5 text-sm text-white border border-white/15 border-dashed">
         <Icon class="w-4 h-4" />
         {name}
       </span>
