@@ -1,0 +1,76 @@
+---
+import HorizontalDivider from './horizontal-divider.astro';
+
+// src/components/Footer.astro
+interface Props {
+  location?: string;
+  aqi?: string;
+  version?: string;
+  links?: Array<{ name: string; url: string }>;
+}
+
+const { 
+  location = "Uruguay",
+  aqi = "64 AQI",
+  version = "v.1",
+  links = [
+    { name: "Ver cv", url: "https://flowcv.com/resume/ssvl2rummhi8" },
+    { name: "Email", url: "mailto:kevpadilla01@gmail.com" },
+    { name: "LinkedIn", url: "https://www.linkedin.com/in/kevinpadi/" },
+    { name: "GitHub", url: "https://github.com/kevinpadi" }
+  ]
+} = Astro.props;
+---
+<div class="relative">
+  <HorizontalDivider side="bottom" />
+  <footer class="p-4">
+    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
+      
+      <div class="flex flex-col gap-2">
+        <div class="text-sm text-neutral-400">
+          {location}
+        </div>
+        <div class="flex items-center gap-2 text-sm text-neutral-400">
+          <span id="clock">--:--:-- --</span>
+        </div>
+      </div>
+
+      <nav class="flex items-center gap-2 text-sm flex-wrap">
+        {links.map((link, index) => (
+          <>
+            <a 
+              href={link.url} 
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-neutral-200 hover:underline transition-opacity duration-200"
+            >
+              {link.name}
+            </a>
+            {index < links.length - 1 && (
+              <span class="text-neutral-300">·</span>
+            )}
+          </>
+        ))}
+      </nav>
+    </div>
+  </footer>
+</div>
+
+<script>
+  function updateClock() {
+    const now = new Date();
+    const timeString = now.toLocaleTimeString('en-US', {
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: true
+    });
+    const clockElement = document.getElementById('clock');
+    if (clockElement) {
+      clockElement.textContent = timeString;
+    }
+  }
+  
+  updateClock();
+  setInterval(updateClock, 1000);
+</script>

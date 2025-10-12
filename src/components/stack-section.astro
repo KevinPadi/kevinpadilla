@@ -1,6 +1,4 @@
 ---
-import HorizontalDashedLine from "./icons/horizontal-dashed-line.astro";
-
 import React from "./icons/react.astro";
 import Node from "./icons/nodejs.astro";
 import Typescript from "./icons/typescript.astro";
@@ -12,6 +10,7 @@ import Html from "./icons/html.astro";
 import Css from "./icons/css.astro";
 import Mongodb from "./icons/mongodb.astro";
 import GithubIcon from "./icons/github-icon.astro";
+import HorizontalDivider from "./horizontal-divider.astro";
 
 const skills = [
   { name: "HTML", icon: Html},
@@ -28,20 +27,19 @@ const skills = [
 ];
 ---
 
-<section class="text-neutral-200 px-4">
-  <div class="py-4 relative">
+<section class="text-neutral-200 relative bg-[#09090b]">
+  <HorizontalDivider side="bottom" />
+  <div class="p-4 relative">
+    <HorizontalDivider side="bottom" />
     <span class="flex items-center gap-2" >
-      <div class="size-1.5 bg-white" />
-      <h2>
+      <h2 class="uppercase font-light">
         Stack
       </h2>
     </span>
-    <HorizontalDashedLine class="top-0" />
-    <HorizontalDashedLine class="bottom-0" />
   </div>
-  <div class="flex flex-wrap gap-2 py-4">
+  <div class="flex flex-wrap gap-2 p-4">
     {skills.map(({ name, icon: Icon }) => (
-      <span class="inline-flex items-center gap-1 rounded p-1.5 text-sm text-white border border-white/15 border-dashed">
+      <span class="inline-flex items-center gap-1 rounded p-1.5 text-sm text-white border border-white/10 border-dashed">
         <Icon class="w-4 h-4" />
         {name}
       </span>

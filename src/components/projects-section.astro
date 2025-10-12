@@ -1,29 +1,37 @@
 ---
 import { getCollection } from "astro:content";
-import HorizontalDashedLine from "./icons/horizontal-dashed-line.astro";
+import HorizontalDivider from "./horizontal-divider.astro";
 
 const projects = await getCollection('projects')
 ---
 
-<section class="text-neutral-200 px-4">
-  <div class="py-4 relative">
+<section class="text-neutral-200 relative bg-[#09090b]">
+  <div class="py-4 relative px-4">
+    <HorizontalDivider side="bottom" />
+
     <span class="flex items-center gap-2" >
-      <div class="size-1.5 bg-white" />
-      <h2>
+      <h2 class="uppercase font-light">
         Proyectos
       </h2>
     </span>
-    <HorizontalDashedLine class="bottom-0" />
   </div>
-  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 py-4">
+  <div class="grid grid-cols-1">
     {
       projects.map((project) => (
-        <a href=`/${project.id}` class="h-52 border border-white/10 rounded-lg hover:scale-[101%] transition overflow-hidden">
+        <a href=`/${project.id}` class="w-full transition group p-4 hover:bg-neutral-900/20 relative">
+          <HorizontalDivider side="bottom" />
+
+          <span class="flex items-center gap-2 mb-4" >
+            <div transition:name={`square-${project.data.name}`} class="size-1.5 bg-white" />
+            <h2 transition:name={`title-${project.data.name}`} class="group-hover:underline">
+              {project.data.name}
+            </h2>
+          </span>
           <img 
             transition:name={`img-${project.data.name}`}
             src={project.data.img[0]}
             alt=`${project.id} image`
-            class="size-full rounded object-cover">
+            class="w-full rounded transition border border-white/5">
         </a>
       ))
     }
