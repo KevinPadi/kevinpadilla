@@ -4,54 +4,50 @@ import LinkedinIcon from "../assets/icons/linkedin.svg";
 import GitHubIcon from "../assets/icons/github.svg";
 import MailIcon from "../assets/icons/mail.svg";
 import SocialButton from "./social-button.astro";
-import HorizontalDashedLine from "./icons/horizontal-dashed-line.astro"
-import AnimatedFace from "./animated-face.astro";
 import CTAButton from "./cta-button.astro"
+import HorizontalDivider from "./horizontal-divider.astro";
 ---
 
-<section class="text-white relative flex flex-col gap-6 items-center justify-between p-4">
-  <HorizontalDashedLine class="top-0" />
-  <HorizontalDashedLine class="bottom-0" />
-  <div class="w-full flex flex-col gap-10">
-    <div class="flex items-start justify-between">
+<section class="text-white relative flex flex-col items-center justify-between bg-[#09090b]">
+  <HorizontalDivider side="top" />
+  <HorizontalDivider side="bottom" />
+  <div class="w-full flex flex-col md:flex-row justify-between gap-4 items-start p-4">
+    <div class="flex flex-col gap-8 items-start justify-between">
       <div class="flex flex-col sm:flex-row gap-3 justify-center">
-        <!-- face -->
-        <AnimatedFace />
         <div class="flex flex-col items-start justify-center -space-y-1">
-          <h1 class="text-neutral-200 text-lg">
+          <h1 class="text-neutral-200 text-xl font-medium">
             Kevin Padilla
           </h1>
-          <p class="text-neutral-400 text-sm">Desarrollador Full Stack</p>
+          <p class="text-neutral-400">Desarrollador Full Stack</p>
         </div>
       </div>
-      <span class="text-sm text-neutral-400 flex gap-2">
-        Hora local: <div id="reloj"></div>
-      </span>
-    </div>
-    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-2 justify-between">
       <CTAButton />
-
-      <div class="flex items-center gap-2">
-        <SocialButton url="mailto:kevpadilla01@gmail.com">
-        <MailIcon class="size-5" />
-        </SocialButton>
-        <SocialButton url="https://flowcv.com/resume/ssvl2rummhi8">
-          <FileIcon class="size-5" />
-        </SocialButton>
-        <SocialButton url="https://linkedin.com/in/kevinpadi">
-          <LinkedinIcon class="size-5" />
-        </SocialButton>
-        <SocialButton url="https://github.com/kevinpadi">
-          <GitHubIcon class="size-5" />
-        </SocialButton>
-      </div>
+    </div>
+    <div class="flex md:flex-col items-center justify-between gap-4">
+      <SocialButton url="mailto:kevpadilla01@gmail.com">
+        <MailIcon class="size-4" />
+        email
+      </SocialButton>
+      <SocialButton url="https://flowcv.com/resume/ssvl2rummhi8">
+        <FileIcon class="size-4" />
+        ver cv
+      </SocialButton>
+      <SocialButton url="https://linkedin.com/in/kevinpadi">
+        <LinkedinIcon class="size-4" />
+        linkedin
+      </SocialButton>
+      <SocialButton url="https://github.com/kevinpadi">
+        <GitHubIcon class="size-4" />
+        github
+      </SocialButton>
     </div>
   </div>
-  <div class="relative pt-4">
-    <HorizontalDashedLine class="top-0" />
-    <p class="text-neutral-200">
-      soy Kevin, desarrollador Full Stack de Uruguay. Me especializo en el desarrollo frontend con React.js, y tengo una gran pasión por crear aplicaciones web dinámicas y responsivas. Además, cuento con experiencia en el desarrollo backend utilizando Node.js y Python.
-    </p>
+  <div class="p-4 relative">
+    <HorizontalDivider side="top" />
+      <p class="text-neutral-200 ">
+        soy Kevin, desarrollador Full Stack de Uruguay. Me especializo en el desarrollo frontend con React.js, y tengo una gran pasión por crear aplicaciones web dinámicas y responsivas. Además, cuento con experiencia en el desarrollo backend utilizando Node.js y Python.
+      </p>
+    </div>
   </div>
 </section>
 
@@ -76,4 +72,3 @@ import CTAButton from "./cta-button.astro"
   updateWatch(); // muestra inmediatamente
   setInterval(updateWatch, 60000); // actualiza cada minuto
 </script>
-

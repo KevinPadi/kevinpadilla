@@ -44,3 +44,8 @@ html {
   scrollbar-gutter: stable;
   scroll-behavior: smooth;
 }
+
+::selection {
+  background-color: #e2e2e2;
+  color: #000000;
+}

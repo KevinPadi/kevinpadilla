@@ -1,5 +1,5 @@
 ---
-import HorizontalDashedLine from "./icons/horizontal-dashed-line.astro";
+import HorizontalDivider from "./horizontal-divider.astro";
 import ArrowUpRight from "./icons/arrow-up-right.astro";
 
 const DATA = [
@@ -21,21 +21,20 @@ const DATA = [
 ]
 ---
 
-<section class="text-neutral-200 relative">
+<section class="text-neutral-200 relative bg-[#09090b]">
+  <HorizontalDivider side="bottom" />
   <div class="p-4 relative">
+    <HorizontalDivider side="bottom" />
     <span class="flex items-center gap-2" >
-      <div class="size-1.5 bg-white" />
-      <h2>
+      <h2 class="uppercase font-light">
         Educación
       </h2>
     </span>
-    <HorizontalDashedLine class="top-0" />
-    <HorizontalDashedLine class="bottom-0" />
   </div>
   <div class="flex flex-col">
     {
       DATA.map((i) => (
-        <div class="flex items-center justify-between gap-4 relative group hover:bg-white/5 transition duration-200 p-4">
+        <div class="flex items-center justify-between gap-4 relative group hover:bg-neutral-900/20 transition duration-200 p-4">
           <a href={i.url} target="_blank" rel="noopener noreferrer" class="inset-0 absolute"></a>
           <div class="flex items-center gap-4">
             <div>
@@ -52,5 +51,4 @@ const DATA = [
       ))
     }
   </div>
-  <HorizontalDashedLine class="bottom-0" />
 </section>

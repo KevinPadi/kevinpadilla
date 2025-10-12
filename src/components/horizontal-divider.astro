@@ -1,0 +1,11 @@
+---
+interface Props {
+  side?: "top" | "bottom";
+}
+
+import { cn } from "../lib/utils";
+
+const { side } = Astro.props;
+---
+
+<div class={cn("absolute left-1/2 h-px w-screen -translate-x-1/2 bg-[var(--color-white)]/10", side === 'top' ? 'top-0' : 'bottom-0')}></div>
